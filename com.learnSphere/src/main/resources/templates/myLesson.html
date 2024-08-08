@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>My Lesson</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="dashboard">
+    <p><strong>Lesson Name:</strong> <span th:text="${lesson.lessonName}"></span></p>
+    <p><strong>Lesson Topic:</strong> <span th:text="${lesson.topic}"></span></p>
+    <div class="lesson-video">
+        <video controls th:src="${lesson.link}" type="video/mp4">
+        </video>
+    </div>
+    </div>
+    <a href="javascript:history.back()" class="back-button">Back to Courses</a>
+</body>
+</html>

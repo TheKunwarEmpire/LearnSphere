@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Add Lesson</h1>
+</header>
+	<form action="addLesson" method="post">
+		<label>Course ID</label>
+		<input type="text" name="courseId">
+		<br>
+		<label>Lesson ID</label>
+		<input type="text" name="lessonId">
+		<br>
+		<label>Lesson Name</label>
+		<input type="text" name="lessonName">
+		<br>
+		<label>Lesson Video</label>
+		<input type="text" name="link">
+		<br>
+		<label>Lesson Topics</label>
+		<input type="text" name="topic">
+		<br>
+		<input type="submit" value="ADD LESSON">
+	</form>
+	<br>
+	<a href="javascript:history.back()" class="back-button">Back to Dashboard</a>
+	<footer>
+        <p>&copy; 2024 LearnSphere. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Listing</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:unless="${hasSubscribed}" class="non-premium">
+        <a href="buyCourses">BUY COURSES</a> <br> <a href="logout">LOGOUT</a>
+    </div>
+    <div th:if="${hasSubscribed}" class="premium">
+    <header>
+	    <h1>View My Courses</h1>
+	</header>
+	<br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Course Price</th>
+                    <th>Lessons</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="course : ${coursesList}">
+                    <td th:text="${course.courseId}"></td>
+                    <td th:text="${course.courseName}"></td>
+                    <td th:text="${course.coursePrice}"></td>
+                    <td>	
+                        <ul>
+                            <li th:each="lesson : ${course.lessons}">
+                                <a th:href="@{/myLesson(lessonId=${lesson.lessonId})}" th:text="${lesson.lessonName}"></a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <a href="javascript:history.back()" class="back-button">Back to Dashboard</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 LearnSphere. All rights reserved.</p>
+    </footer>
+</body>
+</html>

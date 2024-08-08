@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>View All Courses</h1>
+</header>
+<br>
+	<table border>
+		<thead>
+			<tr>
+				<th>Course ID</th>
+				<th>Course Name</th>
+				<th>Course Price</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="course , courseStat :${coursesList}">
+				<td th:text="${course.courseId}"></td>
+				<td th:text="${course.courseName}"></td>
+				<td th:text="${course.coursePrice}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<a href="javascript:history.back()" class="back-button">Back to Dashboard</a>
+	<footer>
+        <p>&copy; 2024 LearnSphere. All rights reserved.</p>
+    </footer>
+</body>
+</html>
